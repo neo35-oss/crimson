@@ -1,0 +1,66 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Crimson Gizlilik Politikası</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* tek sütun, okunaklı yasal metin; kırmızı yalnızca başlık çizgisinde ve vurgularda */
+:root{--bg:#fbf8f8;--fg:#1d1416;--muted:#6b5a5e;--line:#ead9dc;--accent:#b0142f;--panel:#f4ecee;
+--display:'Fraunces',Georgia,serif;--body:'Source Sans 3','Segoe UI',system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#140b0d;--fg:#f3e9eb;--muted:#b7a2a7;--line:#33222a;--accent:#ff4d6d;--panel:#1d1114;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#140b0d;--fg:#f3e9eb;--muted:#b7a2a7;--line:#33222a;--accent:#ff4d6d;--panel:#1d1114;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:680px;margin:0 auto;padding-block:56px 72px}
+header{border-top:4px solid var(--accent);padding-top:22px;margin-bottom:34px}
+.k{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-family:var(--display);font-size:clamp(30px,6vw,42px);line-height:1.15;margin:8px 0 10px;text-wrap:balance}
+.meta{color:var(--muted);font-size:15px}
+h2{font-family:var(--display);font-size:22px;margin:38px 0 8px;text-wrap:balance}
+p,li{margin:0 0 12px}ul{padding-left:22px;margin:0 0 12px}
+.sum{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:0 0 8px}
+.sum p{margin:0}
+b{font-weight:600}
+code{font-size:15px;background:var(--panel);padding:1px 6px;border-radius:5px;overflow-wrap:anywhere}
+a{color:var(--accent)}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+</style>
+</head><body>
+<main>
+<header>
+<div class="k">Chrome uzantısı</div>
+<h1>Crimson — Slowed + Reverb Studio Gizlilik Politikası</h1>
+<div class="meta">Son güncelleme: 27 Ekim 2026</div>
+</header>
+
+<div class="sum"><p><b>Kısaca:</b> Crimson kişisel veri toplamaz, satmaz, kimseyle paylaşmaz. Reklam, analitik ya da takip kodu yoktur. Tüm ses işleme senin bilgisayarında yapılır. Sesin cihazından çıktığı tek durum, senin açtığın bir "Birlikte dinle" odasında, kodu verdiğin arkadaşlarına doğrudan gönderilmesidir.</p></div>
+
+<h2>Hangi verilere erişilir</h2>
+<ul>
+<li><b>Sekme sesi:</b> Uzantıyı bir sekmede başlattığında, efektleri (slowed, reverb, 8D, otomatik mix) uygulamak için o sekmenin sesi alınır. Ses gerçek zamanlı işlenir ve hiçbir sunucuya gönderilmez.</li>
+<li><b>Sekme başlığı:</b> Hangi sekmeye bağlı olduğunu göstermek için sekmenin başlığı okunur.</li>
+<li><b>Yüklediğin veya kaydettiğin şarkılar:</b> Mashup Stüdyosu'na eklediğin dosyalar ve yaptığın mashup'lar yalnızca tarayıcının yerel deposunda (IndexedDB) saklanır. İstediğin zaman Medya kütüphanesinden silebilirsin.</li>
+<li><b>Ayarlar:</b> Efekt ayarların, hazır ayarların ve oda adın tarayıcıda (<code>chrome.storage</code>) saklanır.</li>
+</ul>
+
+<h2>Birlikte dinle odaları</h2>
+<p>Bir oda açtığında veya bir odaya katıldığında:</p>
+<ul>
+<li>İşlenmiş ses, WebRTC ile <b>doğrudan</b> odadaki kişilere gider. Crimson'un geliştiricisi bu sese erişemez.</li>
+<li>Bağlantıyı kurmak için ücretsiz PeerJS eşleştirme sunucusu (<code>0.peerjs.com</code>) kullanılır. Bu sunucu yalnızca rastgele bir bağlantı kimliğini ve bağlantı için gereken ağ bilgisini (IP adresi gibi) görür; ses içeriğini görmez. Ağın doğrudan bağlantıya izin vermediği durumlarda ses, PeerJS'in aktarma (TURN) sunucusu üzerinden şifreli olarak iletilebilir.</li>
+<li>Odadaki kişiler; girdiğin adı, çalan sekmenin başlığını ve açık efekt bilgilerini görür.</li>
+<li>Oda kapandığında bağlantı sona erer; hiçbir kayıt tutulmaz.</li>
+</ul>
+
+<h2>İndirilen yapay zeka modelleri</h2>
+<p>Vokal ayrıştırma ve ritim analizi için gereken model dosyaları ilk kullanımda GitHub üzerinden bir kez indirilir ve tarayıcıda saklanır. Bu indirme sırasında senin hakkında bir veri gönderilmez. Modeller yalnızca veri dosyasıdır, çalıştırılabilir kod içermez.</p>
+
+<h2>Paylaşım ve satış</h2>
+<p>Kullanıcı verileri üçüncü taraflara satılmaz, aktarılmaz, reklam veya kredi değerlendirmesi gibi amaçlarla kullanılmaz. Crimson'un toplanmış bir kullanıcı veritabanı yoktur.</p>
+
+<h2>Verilerini silmek</h2>
+<p>Kaydedilen mashup'ları ve şarkıları uzantının Medya kütüphanesinden silebilirsin. Uzantıyı kaldırdığında tarayıcıda tutulan tüm Crimson verileri de silinir.</p>
+
+<h2>Değişiklikler</h2>
+<p>Bu politika değişirse güncel hali bu sayfada yayımlanır ve üstteki tarih güncellenir.</p>
+
+<footer>Sorular için: <b>bokteam205y@gmail.com</b></footer>
+</main>
+</body></html>
